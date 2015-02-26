@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title><%= @document.title %>| Simple Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").toHTML() %>
+    <%- @getBlock("styles").add(["/styles/style.css","/vendor/bootstrap-theme.min.css","/vendor/bootstrap.min.css"]).toHTML() %>
+    <%- @getBlock("scripts").add(["/vendor/jQuery.js","/vendor/bootstrap.min.js","/scripts/script_posts.js"]).toHTML() %>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Simple Blog Web Site</h1>
+      <p>This is simple website I created</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <a href="../index.html">Main Page -> <%= @document.title %></a>
+      </div>
+      <div class="col-md-4">
+        <p class="text-left"><strong>Tags:</strong>
+          <% for tag in @document.tags: %>
+          <a href="../tags/<%= tag %>.html"><%= tag %></a>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <h1><%= @document.title %></h1>
+    <%- @content %>
+    <p><a class="btn btn-primary btn-lg myButton" href="../index.html" role="button">Main Page »</a></p>
+    <%- @getBlock("scripts").toHTML() %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title><%= @document.title %>| Simple Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").toHTML() %>
+    <%- @getBlock("styles").add(["/styles/style.css","/vendor/bootstrap-theme.min.css","/vendor/bootstrap.min.css"]).toHTML() %>
+    <%- @getBlock("scripts").add(["/vendor/jQuery.js","/vendor/bootstrap.min.js","/scripts/script_posts.js"]).toHTML() %>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Simple Blog Web Site</h1>
+      <p>This is simple website I created</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <p>
+          <a href="../index.html">Main Page -> <%= @document.title %></a>
+          <h1>Tag: <%= @document.tag %></h1>
+          <% for post in @getCollection("html").findAll({isPage:true, tags:{$in: @document.tag}}).toJSON(): %>
+          <ul class="list-unstyled">
+              <li>
+                <h1><%= post.title %></h1><small><%= post.subtitle %></small>
+                <p><a class="btn btn-primary btn-sm myButton" href="<%= post.url %>" role="button">Read More »</a></p>
+                <p class="text-left"><strong>Tags:</strong>
+                  <% for tag in post.tags: %>
+                  <a href="../tags/<%= tag %>.html"><%= tag %></a>
+                  <% end %>
+                </p>
+              </li>
+          </ul>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

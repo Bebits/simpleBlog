@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Tag: cat| Simple Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="DocPad v6.73.2" />
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/vendor/bootstrap-theme.min.css" /><link  rel="stylesheet" href="/vendor/bootstrap.min.css" />
+    <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script defer="defer"  src="/vendor/jQuery.js"></script><script defer="defer"  src="/vendor/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script_posts.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Simple Blog Web Site</h1>
+      <p>This is simple website I created</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <p>
+          <a href="../index.html">Main Page -> Tag: cat</a>
+          <h1>Tag: cat</h1>
+          
+          <ul class="list-unstyled">
+              <li>
+                <h1>Lorem Ipsum 4</h1><small>Suspendisse lobortis mauris eu lacus maximus eleifend. Proin eu quam augue. In et nunc lorem. Ut rutrum, dolor eget blandit blandit, enim nulla feugiat eros, et luctus quam turpis elementum purus. Aliquam erat volutpat. Vestibulum eu facilisis mauris, eu pulvinar urna. Cras vel tristique diam, ac blandit justo..</small>
+                <p><a class="btn btn-primary btn-sm myButton" href="/posts/four.html" role="button">Read More »</a></p>
+                <p class="text-left"><strong>Tags:</strong>
+                  
+                  <a href="../tags/cat.html">cat</a>
+                  
+                  <a href="../tags/one.html">one</a>
+                  
+                </p>
+              </li>
+          </ul>
+          
+          <ul class="list-unstyled">
+              <li>
+                <h1>Lorem Ipsum 2</h1><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</small>
+                <p><a class="btn btn-primary btn-sm myButton" href="/posts/two.html" role="button">Read More »</a></p>
+                <p class="text-left"><strong>Tags:</strong>
+                  
+                  <a href="../tags/cat.html">cat</a>
+                  
+                  <a href="../tags/one.html">one</a>
+                  
+                </p>
+              </li>
+          </ul>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

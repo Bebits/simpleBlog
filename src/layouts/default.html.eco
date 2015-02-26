@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title><%= @document.title %>| Simple Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").toHTML() %>
+    <%- @getBlock("styles").add(["/styles/style.css","/vendor/bootstrap-theme.min.css","/vendor/bootstrap.min.css","/vendor/tagmanager.css","/vendor/zabuto_calendar.min.css"]).toHTML() %>
+    <%- @getBlock("scripts").add(["/vendor/jQuery.js","/vendor/bootstrap.min.js","/vendor/tagmanager.js","/vendor/zabuto_calendar.min.js","/scripts/script_main.js"]).toHTML() %>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Simple Blog Web Site</h1>
+      <p>This is simple website I created.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <% for page in @getCollection("html").findAll({isPage:true},[date:-1]).toJSON(): %>
+            <ul class="list-unstyled">
+                <li>
+                  <h1><%= page.title %></h1><small><%= page.subtitle %></small>
+                  <p><a class="btn btn-primary btn-sm myButton" href="<%= page.url %>" role="button">Read More »</a></p>
+                  <p class="text-right"><strong>Tags:</strong>
+                    <% for tag in page.tags: %>
+                    <a href="../tags/<%= tag %>.html"><%= tag %></a>
+                    <% end %>
+                  </p>
+                </li>
+            </ul>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <div id="calendar"></div>
+      </div>
+    </div>
+
+
+
+    <!-- <ul>
+      <% for page in @getCollection("html").findAll({isPage:true}).toJSON(): %>
+          <li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+              <a href="<%= page.url %>">
+                <%= page.title %>
+              </a>
+          </li>
+      <% end %>
+    </ul>
+    <h1><%= @document.title %></h1>
+    <%- @content %> -->
+    <%- @getBlock("scripts").toHTML() %>
+  </div>
+</body>
+</html>

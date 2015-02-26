@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Tag: Coffe| Simple Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="DocPad v6.73.2" />
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/vendor/bootstrap-theme.min.css" /><link  rel="stylesheet" href="/vendor/bootstrap.min.css" />
+    <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script defer="defer"  src="/vendor/jQuery.js"></script><script defer="defer"  src="/vendor/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script_posts.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Simple Blog Web Site</h1>
+      <p>This is simple website I created</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <p>
+          <a href="../index.html">Main Page -> Tag: Coffe</a>
+          <h1>Tag: Coffe</h1>
+          
+          <ul class="list-unstyled">
+              <li>
+                <h1>Lorem Ipsum 1</h1><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis neque vitae augue dignissim, non tincidunt purus commodo. Aenean blandit tortor arcu, id scelerisque ex luctus ac. Praesent euismod eu nulla sed mattis. Praesent cursus, libero et ullamcorper hendrerit, leo felis vulputate elit, eget vehicula justo nisi sit amet dui. Fusce lobortis sem in auctor porttitor. Suspendisse a augue varius, suscipit neque nec, porta mi. Cras euismod erat nibh. Ut mattis sollicitudin viverra. Nam vehicula cursus ante non sollicitudin. Mauris ornare mattis lorem nec ornare.</small>
+                <p><a class="btn btn-primary btn-sm myButton" href="/posts/one.html" role="button">Read More »</a></p>
+                <p class="text-left"><strong>Tags:</strong>
+                  
+                  <a href="../tags/Coffe.html">Coffe</a>
+                  
+                  <a href="../tags/beer.html">beer</a>
+                  
+                </p>
+              </li>
+          </ul>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
